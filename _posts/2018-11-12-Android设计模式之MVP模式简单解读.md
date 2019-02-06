@@ -1,7 +1,7 @@
----
+ï»¿---
 layout:     post
-title:      AndroidÉè¼ÆÄ£Ê½
-subtitle:   MVPÄ£Ê½¼òµ¥½â¶Á
+title:      Androidè®¾è®¡æ¨¡å¼
+subtitle:   MVPæ¨¡å¼ç®€å•è§£è¯»
 date:       2018-11-12
 author:     TkiChus
 header-img: img/post-bg-mvp.jpg
@@ -11,86 +11,86 @@ tags:
     - DreamMemory001 Blog
     - Android
 ---
-# MVPÄ£Ê½¼òµ¥½âÎö
+# MVPæ¨¡å¼ç®€å•è§£æ
 
-     ÔÚAndroidµÄ¿¼·¨ÖĞ£¬ÎÒÃÇÍ¨³£»á½«Ò»¸öÏîÄ¿·Ö³ÉÒ»¸ö¸öµÄÄ£¿éÎÄ¼ş¼ĞÀ´½øĞĞ¹ÜÀíÎ¬»¤£¬
-     ÓĞµÄÈËÊÇÖ±½Ó°´ÕÕ¹¦ÄÜÀ´·ÖÄ£¿é£¬ÕâÒ²ÊÇ×î³£¼ûµÄÉè¼ÆÄ£Ê½¡£µ«ÊÇÓĞµÄÈËÔò»á°´ÕÕÒ»¶¨
-    Éè¼ÆÄ£Ê½£¬ÔÙ½áºÏ¹¦ÄÜÀ´½øĞĞÏîÄ¿Ä£Ê½µÄÉè¼Æ£¬±ÈÈçÏÖÔÚ³£µÄMVP£¬MVVMÕâÁ©ÖÖÄ¿Ç°±È½Ï
-    Á÷ĞĞµÄÏîÄ¿Éè¼ÆÄ£Ê½¡£±¾²©¿Í½éÉÜµÄÊÇMVPÄ£Ê½¡£
+     åœ¨Androidçš„è€ƒæ³•ä¸­ï¼Œæˆ‘ä»¬é€šå¸¸ä¼šå°†ä¸€ä¸ªé¡¹ç›®åˆ†æˆä¸€ä¸ªä¸ªçš„æ¨¡å—æ–‡ä»¶å¤¹æ¥è¿›è¡Œç®¡ç†ç»´æŠ¤ï¼Œ
+     æœ‰çš„äººæ˜¯ç›´æ¥æŒ‰ç…§åŠŸèƒ½æ¥åˆ†æ¨¡å—ï¼Œè¿™ä¹Ÿæ˜¯æœ€å¸¸è§çš„è®¾è®¡æ¨¡å¼ã€‚ä½†æ˜¯æœ‰çš„äººåˆ™ä¼šæŒ‰ç…§ä¸€å®š
+    è®¾è®¡æ¨¡å¼ï¼Œå†ç»“åˆåŠŸèƒ½æ¥è¿›è¡Œé¡¹ç›®æ¨¡å¼çš„è®¾è®¡ï¼Œæ¯”å¦‚ç°åœ¨å¸¸çš„MVPï¼ŒMVVMè¿™ä¿©ç§ç›®å‰æ¯”è¾ƒ
+    æµè¡Œçš„é¡¹ç›®è®¾è®¡æ¨¡å¼ã€‚æœ¬åšå®¢ä»‹ç»çš„æ˜¯MVPæ¨¡å¼ã€‚
 
 
-### MVPÄ£Ê½ÊÇÓÉMVCÄ£Ê½Öğ½¥Ñİ»¯³öÀ´µÄ¡£ÎÒÃÇÊ×ÏÈ½øĞĞÒ»ÏÂ¶Ô±È
+### MVPæ¨¡å¼æ˜¯ç”±MVCæ¨¡å¼é€æ¸æ¼”åŒ–å‡ºæ¥çš„ã€‚æˆ‘ä»¬é¦–å…ˆè¿›è¡Œä¸€ä¸‹å¯¹æ¯”
 
 > MVC
 
-M£¨model£©Ä£ĞÍ, ÊÇÓ¦ÓÃ³ÌĞòÖĞÓÃÓÚ´¦ÀíÓ¦ÓÃÊı¾İÂß¼­µÄ²¿·Ö£¬
-Í¨³£Ä£ĞÍ¶ÔÏó¸ºÔğÔÚÊı¾İ¿âÖĞ½øĞĞ´æÈ¡
+Mï¼ˆmodelï¼‰æ¨¡å‹, æ˜¯åº”ç”¨ç¨‹åºä¸­ç”¨äºå¤„ç†åº”ç”¨æ•°æ®é€»è¾‘çš„éƒ¨åˆ†ï¼Œ
+é€šå¸¸æ¨¡å‹å¯¹è±¡è´Ÿè´£åœ¨æ•°æ®åº“ä¸­è¿›è¡Œå­˜å–
 
-V(view)ÊÓÍ¼£¬ ÊÇÓ¦ÓÃ³ÌĞòÖĞ´¦ÀíÊı¾İµÄÏÔÊ¾²¿·Ö£¬Í¨³£ÊÓÍ¼
-ÊÇÒ»¾äÄ£ĞÍÊı¾İÀ´´´½¨µÄ
+V(view)è§†å›¾ï¼Œ æ˜¯åº”ç”¨ç¨‹åºä¸­å¤„ç†æ•°æ®çš„æ˜¾ç¤ºéƒ¨åˆ†ï¼Œé€šå¸¸è§†å›¾
+æ˜¯ä¸€å¥æ¨¡å‹æ•°æ®æ¥åˆ›å»ºçš„
 
-C£¨controller£©¿ØÖÆÆ÷£¬ ÊÇÓ¦ÓÃ³ÌĞòÖĞ´¦ÀíÓÃ»§½»»¥µÄ²¿·Ö£¬
-Í¨³£¿ØÖÆÆ÷¸ºÔğ´ÓÊÓÍ¼¶ÁÈ¡Êı¾İ£¬¿ØÖÆÓÃ»§µÄÊäÈë£¬²¢ÏòÄ£ĞÍ·¢ËÍ
-Êı¾İ¡£
+Cï¼ˆcontrollerï¼‰æ§åˆ¶å™¨ï¼Œ æ˜¯åº”ç”¨ç¨‹åºä¸­å¤„ç†ç”¨æˆ·äº¤äº’çš„éƒ¨åˆ†ï¼Œ
+é€šå¸¸æ§åˆ¶å™¨è´Ÿè´£ä»è§†å›¾è¯»å–æ•°æ®ï¼Œæ§åˆ¶ç”¨æˆ·çš„è¾“å…¥ï¼Œå¹¶å‘æ¨¡å‹å‘é€
+æ•°æ®ã€‚
 
 > MVP
 
 MVP
 
-M£¨model£©¸ºÔğÊı¾İµÄÇëÇó£¬½âÎö£¬¹ıÂËµÈÊı¾İ²Ù×÷
+Mï¼ˆmodelï¼‰è´Ÿè´£æ•°æ®çš„è¯·æ±‚ï¼Œè§£æï¼Œè¿‡æ»¤ç­‰æ•°æ®æ“ä½œ
 
-V£¨View£©¸ºÔğÍ¼Ê¾²¿·ÖÕ¹Ê¾£¬Í¼Ê¾ÊÂ¼ş´¦Àí£¬Activity£¬
-Fragment£¬Dialog£¬ViewGroupµÈ³ÊÏÖÊÓÍ¼µÄ×é¼ş¶¼¿ÉÒÔ³Ğµ£¸Ã
-½ÇÉ«
+Vï¼ˆViewï¼‰è´Ÿè´£å›¾ç¤ºéƒ¨åˆ†å±•ç¤ºï¼Œå›¾ç¤ºäº‹ä»¶å¤„ç†ï¼ŒActivityï¼Œ
+Fragmentï¼ŒDialogï¼ŒViewGroupç­‰å‘ˆç°è§†å›¾çš„ç»„ä»¶éƒ½å¯ä»¥æ‰¿æ‹…è¯¥
+è§’è‰²
 
-P£¨presenter£©ÊÇViewºÍModel½»»¥µÄÇÅÁº
+Pï¼ˆpresenterï¼‰æ˜¯Viewå’ŒModeläº¤äº’çš„æ¡¥æ¢
 
-* MVPÄ£Ê½ºÍMVCÄ£Ê½¶Ô±ÈÍ¼
+* MVPæ¨¡å¼å’ŒMVCæ¨¡å¼å¯¹æ¯”å›¾
 
 ![](http://ww1.sinaimg.cn/large/006nBCHPly1fzsdttxqkcj30lm099t9l.jpg)
 
-### Ê¹ÓÃMVPµÄÔ­Òò
+### ä½¿ç”¨MVPçš„åŸå› 
 
-ÔÚAndroidÖĞ£¬¶ÔÓÚActivity²¢Ã»ÓĞÃ÷È·µÄËµËûÊÇÊôÓÚ
-View»¹ÊÇControllerµÄ·¶³ë£¬Activity¼ÈÓĞViewµÄĞÔÖÊ
-£¬Ò²¾ßÓĞControllerµÄĞÔÖÊ£¬ËùÒÔµ¼ÖÂMVCÔÚAndroidÖĞºÜ
-ÄÑÃ÷È··Ö¹¤Ê¹ÓÃ£¬µ¼ÖÂActivityºÜÖØ¡£¶øÇÒMVCÖĞµÄView»á
-ÓëModelÖ±½Ó½»»¥£¬ËùÒÔActivityÓëModelµÄñîºÏĞÔºÜ¸ß£¬µ±
-ºóÆÚÎ¬»¤Ê±£¬ÉÔÓĞ±ä¶¯£¬¿ÉÄÜModel£¬Activity£¬XML¶¼»á¸ú
-×Å¸Ä±ä£¬¹¤×÷Á¿ºÜ´ó£¬³É±¾Ì«¸ß¡£
+åœ¨Androidä¸­ï¼Œå¯¹äºActivityå¹¶æ²¡æœ‰æ˜ç¡®çš„è¯´ä»–æ˜¯å±äº
+Viewè¿˜æ˜¯Controllerçš„èŒƒç•´ï¼ŒActivityæ—¢æœ‰Viewçš„æ€§è´¨
+ï¼Œä¹Ÿå…·æœ‰Controllerçš„æ€§è´¨ï¼Œæ‰€ä»¥å¯¼è‡´MVCåœ¨Androidä¸­å¾ˆ
+éš¾æ˜ç¡®åˆ†å·¥ä½¿ç”¨ï¼Œå¯¼è‡´Activityå¾ˆé‡ã€‚è€Œä¸”MVCä¸­çš„Viewä¼š
+ä¸Modelç›´æ¥äº¤äº’ï¼Œæ‰€ä»¥Activityä¸Modelçš„è€¦åˆæ€§å¾ˆé«˜ï¼Œå½“
+åæœŸç»´æŠ¤æ—¶ï¼Œç¨æœ‰å˜åŠ¨ï¼Œå¯èƒ½Modelï¼ŒActivityï¼ŒXMLéƒ½ä¼šè·Ÿ
+ç€æ”¹å˜ï¼Œå·¥ä½œé‡å¾ˆå¤§ï¼Œæˆæœ¬å¤ªé«˜ã€‚
 
-¶øMVPÓëMVC×î´óµÄ²»Í¬Ö®´¦£¬MVP½«MºÍV·Ö¸ôÀ´£¬Í¨¹ıP½»»¥£¬
-ÕâÑùÔÚAndroidÖĞ£¬¾Í¿ÉÒÔÃ÷È·µÄ°ÑActivityµ±×öView´¦Àí£¬
-ËäÈ»¿ÉÄÜ»¹ÓĞÒ»µãÂß¼­ÔÚÆäÖĞ£¬µ«ÊÇÒÑ¾­ÎŞÉË´óÑÅ£»ViewºÍModel
-²»Ö±½Ó½»»¥£¬µ±ViewÓĞ±ä¶¯»òÕßModelÓĞ±ä¶¯Ê±£¬²»»áÏà»¥Ó°Ïì
-£¬ÓĞÌ«´ó±ä¶¯£¬ñîºÏĞÔµÍ£¬¶ÔÓÚºóÆÚÎ¬»¤À´Ëµ£¬ÌØ±ğÊÇÏîÄ¿Ô½À´Ô½ÅÓ´ó
-Ê±£¬¿ÉÒÔºÜ¿ìµÄÀíÇåÏîÄ¿µÄ½á¹¹£¬ÕÒµ½ĞèÒªĞŞ¸ÄµÄµØ·½£¬´ó´óËõ¶Ì
-ÁË¹¤×÷Á¿¡£¶øÇÒ£¬ ÒòÎªViewÓëModel·ÖÀëµÄÔµ¹Ê£¬Model¿ÉÒÔµ¥¶À
-½øĞĞµ¥Ôª²âÊÔ¡£
+è€ŒMVPä¸MVCæœ€å¤§çš„ä¸åŒä¹‹å¤„ï¼ŒMVPå°†Må’ŒVåˆ†éš”æ¥ï¼Œé€šè¿‡Päº¤äº’ï¼Œ
+è¿™æ ·åœ¨Androidä¸­ï¼Œå°±å¯ä»¥æ˜ç¡®çš„æŠŠActivityå½“åšViewå¤„ç†ï¼Œ
+è™½ç„¶å¯èƒ½è¿˜æœ‰ä¸€ç‚¹é€»è¾‘åœ¨å…¶ä¸­ï¼Œä½†æ˜¯å·²ç»æ— ä¼¤å¤§é›…ï¼›Viewå’ŒModel
+ä¸ç›´æ¥äº¤äº’ï¼Œå½“Viewæœ‰å˜åŠ¨æˆ–è€…Modelæœ‰å˜åŠ¨æ—¶ï¼Œä¸ä¼šç›¸äº’å½±å“
+ï¼Œæœ‰å¤ªå¤§å˜åŠ¨ï¼Œè€¦åˆæ€§ä½ï¼Œå¯¹äºåæœŸç»´æŠ¤æ¥è¯´ï¼Œç‰¹åˆ«æ˜¯é¡¹ç›®è¶Šæ¥è¶Šåºå¤§
+æ—¶ï¼Œå¯ä»¥å¾ˆå¿«çš„ç†æ¸…é¡¹ç›®çš„ç»“æ„ï¼Œæ‰¾åˆ°éœ€è¦ä¿®æ”¹çš„åœ°æ–¹ï¼Œå¤§å¤§ç¼©çŸ­
+äº†å·¥ä½œé‡ã€‚è€Œä¸”ï¼Œ å› ä¸ºViewä¸Modelåˆ†ç¦»çš„ç¼˜æ•…ï¼ŒModelå¯ä»¥å•ç‹¬
+è¿›è¡Œå•å…ƒæµ‹è¯•ã€‚
 
-ËùÒÔ£¬×îºó¸öÈËÈÏÎªÈç¹ûÄãµÄÏîÄ¿Ô½À´Ô½ÅÓ´ó£¬²»·ÁÊÔÊÔMVP+DataBing
-£¬ÆäÊµÕâ¾ÍÓĞµãÀàËÆÓÚMVPÄ£Ê½£¬·½±ã¿ì½İ£¬¼´Ê¹ÏîÄ¿ÅÓ´ó£¬¸Ä±äÊ±Ò²
-²»ĞèÒªÌ«¶àÖØ¹¹¡£
+æ‰€ä»¥ï¼Œæœ€åä¸ªäººè®¤ä¸ºå¦‚æœä½ çš„é¡¹ç›®è¶Šæ¥è¶Šåºå¤§ï¼Œä¸å¦¨è¯•è¯•MVP+DataBing
+ï¼Œå…¶å®è¿™å°±æœ‰ç‚¹ç±»ä¼¼äºMVPæ¨¡å¼ï¼Œæ–¹ä¾¿å¿«æ·ï¼Œå³ä½¿é¡¹ç›®åºå¤§ï¼Œæ”¹å˜æ—¶ä¹Ÿ
+ä¸éœ€è¦å¤ªå¤šé‡æ„ã€‚
 
 
 ### MVPLoader
 
-> ÏÂÃæÊÇ×Ô¼ºĞ´µÄ´úÂë
+> ä¸‹é¢æ˜¯è‡ªå·±å†™çš„ä»£ç 
 
 ```java
 ==================================View=======================================
 
-ËùÓĞµÄview£¨Activity¡¢FragmentActivity¡¢Fragment...£©¶¼±ØĞëÊµÏÖÕâ¸ö½Ó¿Ú
+æ‰€æœ‰çš„viewï¼ˆActivityã€FragmentActivityã€Fragment...ï¼‰éƒ½å¿…é¡»å®ç°è¿™ä¸ªæ¥å£
 
 public interface IView {
-    // ´Ë·½·¨ÊÇÎªÁËµ±PresenterÖĞĞèÒª»ñÈ¡ÉÏÏÂÎÄ¶ÔÏóÊ±£¬´«µİÉÏÏÂÎÄ¶ÔÏó£¬¶ø²»ÊÇÈÃPresenterÖ±½Ó³ÖÓĞÉÏÏÂ  ÎÄ¶ÔÏó
+    // æ­¤æ–¹æ³•æ˜¯ä¸ºäº†å½“Presenterä¸­éœ€è¦è·å–ä¸Šä¸‹æ–‡å¯¹è±¡æ—¶ï¼Œä¼ é€’ä¸Šä¸‹æ–‡å¯¹è±¡ï¼Œè€Œä¸æ˜¯è®©Presenterç›´æ¥æŒæœ‰ä¸Šä¸‹  æ–‡å¯¹è±¡
     Activity getSelfActivity();
 }
 
-ÕâÊÇActivityµÄ»ùÀà£º
+è¿™æ˜¯Activityçš„åŸºç±»ï¼š
 
 public abstract class BaseActivity<P extends IPresenter> extends Activity implements IView {
-    // Presenter¶ÔÏó
+    // Presenterå¯¹è±¡
     protected P MvpPre;
 
     @Override
@@ -99,7 +99,7 @@ public abstract class BaseActivity<P extends IPresenter> extends Activity implem
         MvpPre = bindPresenter();
     }
 
-    // °ó¶¨Presenter
+    // ç»‘å®šPresenter
     protected abstract P bindPresenter();
 
     public <T> T $(int resId) {
@@ -119,7 +119,7 @@ public abstract class BaseActivity<P extends IPresenter> extends Activity implem
     protected void onDestroy() {
         super.onDestroy();
         /**
-         * ÔÚÉúÃüÖÜÆÚ½áÊøÊ±£¬½«presenterÓëviewÖ®¼äµÄÁªÏµ¶Ï¿ª£¬·ÀÖ¹³öÏÖÄÚ´æĞ¹Â¶
+         * åœ¨ç”Ÿå‘½å‘¨æœŸç»“æŸæ—¶ï¼Œå°†presenterä¸viewä¹‹é—´çš„è”ç³»æ–­å¼€ï¼Œé˜²æ­¢å‡ºç°å†…å­˜æ³„éœ²
          */
         if (MvpPre != null) {
             MvpPre.detachView();
@@ -132,10 +132,10 @@ public interface IPresenter {
     void detachView();
 }
 
-PresenterµÄ»ùÀà£º
+Presenterçš„åŸºç±»ï¼š
 
 public abstract class BasePresenter<V extends IView> implements IPresenter {
-    // ´Ë´¦Ê¹ÓÃÈõÒıÓÃÊÇÒòÎª£¬ÓĞÊ±Activity¹Ø±Õ²»Ò»¶¨»á×ßonDestroy£¬ËùÒÔÕâÊ±Ê¹ÓÃÈõÒıÓÃ¿ÉÒÔ¼°Ê±»ØÊÕIView
+    // æ­¤å¤„ä½¿ç”¨å¼±å¼•ç”¨æ˜¯å› ä¸ºï¼Œæœ‰æ—¶Activityå…³é—­ä¸ä¸€å®šä¼šèµ°onDestroyï¼Œæ‰€ä»¥è¿™æ—¶ä½¿ç”¨å¼±å¼•ç”¨å¯ä»¥åŠæ—¶å›æ”¶IView
     protected Reference<V> MvpRef;
 
     public BasePresenter(V view) {
@@ -154,7 +154,7 @@ public abstract class BasePresenter<V extends IView> implements IPresenter {
     }
 
     /**
-     * Ö÷ÒªÓÃÓÚÅĞ¶ÏIViewµÄÉúÃüÖÜÆÚÊÇ·ñ½áÊø£¬·ÀÖ¹³öÏÖÄÚ´æĞ¹Â¶×´¿ö
+     * ä¸»è¦ç”¨äºåˆ¤æ–­IViewçš„ç”Ÿå‘½å‘¨æœŸæ˜¯å¦ç»“æŸï¼Œé˜²æ­¢å‡ºç°å†…å­˜æ³„éœ²çŠ¶å†µ
      *
      * @return
      */
@@ -163,7 +163,7 @@ public abstract class BasePresenter<V extends IView> implements IPresenter {
     }
 
     /**
-     * ActivityÉúÃüÖÜÆÚ½áÊøÊ±£¬PresenterÒ²Çå³ıIView¶ÔÏó£¬²»ÔÚ³ÖÓĞ
+     * Activityç”Ÿå‘½å‘¨æœŸç»“æŸæ—¶ï¼ŒPresenterä¹Ÿæ¸…é™¤IViewå¯¹è±¡ï¼Œä¸åœ¨æŒæœ‰
      */
     @Override
     public void detachView() {
@@ -175,9 +175,9 @@ public abstract class BasePresenter<V extends IView> implements IPresenter {
 }
 
 ===================================demo========================================
-½Ó¿Ú£º
+æ¥å£ï¼š
 /**
- * ´´½¨Ò»¸öÀà×÷ÎªÅ¦´ø£¬½«view¡¢presenter¡¢modelµÄ½Ó¿Ú·½·¨¶¼´®ÁªÔÚÒ»Æğ£¬¸ü¼Ó±ãÓÚ¹ÜÀí
+ * åˆ›å»ºä¸€ä¸ªç±»ä½œä¸ºçº½å¸¦ï¼Œå°†viewã€presenterã€modelçš„æ¥å£æ–¹æ³•éƒ½ä¸²è”åœ¨ä¸€èµ·ï¼Œæ›´åŠ ä¾¿äºç®¡ç†
  */
 public final class MainContacts {
     public interface IMain extends IView {
@@ -194,7 +194,7 @@ public final class MainContacts {
 }
 
 
-Model²¿·Ö£º
+Modeléƒ¨åˆ†ï¼š
 
 public class MainLogic implements MainContacts.IMainLgc {
 
@@ -207,7 +207,7 @@ public class MainLogic implements MainContacts.IMainLgc {
 }
 
 
-View²¿·Ö£º
+Viewéƒ¨åˆ†ï¼š
 public class MainActivity extends BaseActivity<MainPresnter> implements MainContacts.IMain {
     private EditText editT_username, editT_password;
     private Button btn_login;
@@ -243,15 +243,15 @@ public class MainActivity extends BaseActivity<MainPresnter> implements MainCont
     @Override
     public void showTips(boolean isSucceess) {
         if (isSucceess) {
-            Toast.makeText(this, "µÇÂ¼³É¹¦£¡", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ç™»å½•æˆåŠŸï¼", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "µÇÂ¼Ê§°Ü£¡", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ç™»å½•å¤±è´¥ï¼", Toast.LENGTH_SHORT).show();
         }
     }
 }
 
 
-Presenter²¿·Ö£º
+Presenteréƒ¨åˆ†ï¼š
 public class MainPresnter extends BasePresenter<MainContacts.IMain> implements MainContacts.IMainPre {
     private MainLogic mMainLogic;
 
@@ -262,7 +262,7 @@ public class MainPresnter extends BasePresenter<MainContacts.IMain> implements M
 
     @Override
     public void login(String username, String password) {
-        // ÅĞ¶ÏactivityµÄÉúÃüÖÜÆÚÊÇ·ñ½áÊø£¬²»ÅĞ¶ÏµÄ»°ÔÚ¼«¶ËÇé¿öÏÂ¿ÉÄÜ»á³öÏÖÄÚ´æĞ¹Â¶
+        // åˆ¤æ–­activityçš„ç”Ÿå‘½å‘¨æœŸæ˜¯å¦ç»“æŸï¼Œä¸åˆ¤æ–­çš„è¯åœ¨æç«¯æƒ…å†µä¸‹å¯èƒ½ä¼šå‡ºç°å†…å­˜æ³„éœ²
         if (isViewAttach()) {
             MvpRef.get().showTips(mMainLogic.login(username, password));
         }
@@ -271,9 +271,9 @@ public class MainPresnter extends BasePresenter<MainContacts.IMain> implements M
 
 
 ```
-> ÒÔÉÏ¾ÍÊÇÎÒ×Ô¼º¶ÔMVPÄ£Ê½µÄÒ»Ğ©Àí½â£¬Èç¹ûÄã²»Ïë×Ô¼ºÖØĞÂ´î½¨MVPÄ£Ê½
+> ä»¥ä¸Šå°±æ˜¯æˆ‘è‡ªå·±å¯¹MVPæ¨¡å¼çš„ä¸€äº›ç†è§£ï¼Œå¦‚æœä½ ä¸æƒ³è‡ªå·±é‡æ–°æ­å»ºMVPæ¨¡å¼
 
-¿ÉÒÔÖ±½ÓÊ¹ÓÃMVPLoaderÏîÄ¿(ÕâÊÇ±ğÈË·â×°ºÃµÄÏîÄ¿)×öÒÀÀµ£º
+å¯ä»¥ç›´æ¥ä½¿ç”¨MVPLoaderé¡¹ç›®(è¿™æ˜¯åˆ«äººå°è£…å¥½çš„é¡¹ç›®)åšä¾èµ–ï¼š
 
 ```java
 Step 1:
@@ -292,20 +292,20 @@ Step 2:
       }
 ```
 
-### ×îºó£¬·ÖÎöÒ»ÏÂÆäÄ£Ê½µÄÓÅÈ±µã
+### æœ€åï¼Œåˆ†æä¸€ä¸‹å…¶æ¨¡å¼çš„ä¼˜ç¼ºç‚¹
 
- ÓÅµã£º
+ ä¼˜ç‚¹ï¼š
 
-1.µ¥Ò»Ö°Ôğ£¬Model£¬ View£¬ PresenterÖ»´¦Àíµ¥Ò»Âß¼­
+1.å•ä¸€èŒè´£ï¼ŒModelï¼Œ Viewï¼Œ Presenteråªå¤„ç†å•ä¸€é€»è¾‘
 
-2.½âñî£ºModel²ãµÄĞŞ¸ÄºÍView²ãµÄĞŞ¸Ä»¥²»Ó°Ïì
+2.è§£è€¦ï¼šModelå±‚çš„ä¿®æ”¹å’ŒViewå±‚çš„ä¿®æ”¹äº’ä¸å½±å“
 
-3.ÃæÏò½Ó¿Ú±à³Ì£¬ÒÀÀµ³éÏó£ºPresenterºÍViewÏà»¥³ÖÓĞ³éÏóÒıÓÃ£¬
-¶ÔÍâÓ°²ØÄÚ²¿ÊµÏÖÏ¸½Ú
+3.é¢å‘æ¥å£ç¼–ç¨‹ï¼Œä¾èµ–æŠ½è±¡ï¼šPresenterå’ŒViewç›¸äº’æŒæœ‰æŠ½è±¡å¼•ç”¨ï¼Œ
+å¯¹å¤–å½±è—å†…éƒ¨å®ç°ç»†èŠ‚
 
-È±µã£º
+ç¼ºç‚¹ï¼š
 
-1.Model½øĞĞÒì²½²Ù×÷µÄÊ±ºò£¬»ñÈ¡½á¹ûÍ¨¹ıPresenter»á´«µ½ViewµÄ
-Ê±ºò£¬³öÏÖViewÒıÓÃµÄ¿ÕÖ¸ÕëÒì³£
+1.Modelè¿›è¡Œå¼‚æ­¥æ“ä½œçš„æ—¶å€™ï¼Œè·å–ç»“æœé€šè¿‡Presenterä¼šä¼ åˆ°Viewçš„
+æ—¶å€™ï¼Œå‡ºç°Viewå¼•ç”¨çš„ç©ºæŒ‡é’ˆå¼‚å¸¸
 
-2.PresenterºÍViewÏà»¥³ÖÓĞ³éÏóÒıÓÃ,½â³ı²»¼°Ê±µÄ»°ÈİÒ×³öÏÖÄÚ´æĞ¹Â¶
+2.Presenterå’ŒViewç›¸äº’æŒæœ‰æŠ½è±¡å¼•ç”¨,è§£é™¤ä¸åŠæ—¶çš„è¯å®¹æ˜“å‡ºç°å†…å­˜æ³„éœ²
