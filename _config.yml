@@ -1,0 +1,114 @@
+# Site settings
+title: BY Blog
+SEOTitle: TkiChus | DreamMemory001 Blog
+header-img: img/touxiang.jpg
+email: dreammemory001@outlook.com
+description: "Node code, No struggle."
+keyword: "Git,TkiChus, DreamMemory001 Blog, Android, Java,MachineStudy, data_structure, C,C++,Kotlin,flutter,MATLAB,Python,Opencv,OpenMv"
+url: "https://dreammemory001.github.io"          # your host, for absolute URL
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/DreamMemory001/DreamMemory001.github.io" # you code repository
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "Goals determine what you going to be!"
+sidebar-avatar: /img/touxiang.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# SNS settings
+RSS: false
+weibo_username:     DreamMemory001
+zhihu_username:     DreamMemory001
+github_username:    TkiChus
+facebook_username:  Chus Tki
+#jianshu_username:   e71990ada2fd
+#twitter_username:   qiubaiying
+
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+permalink: pretty
+paginate: 3
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# 璇勮绯荤粺
+# Disqus锛坔ttps://disqus.com/锛�
+# disqus_username: qiubaiying
+
+# Gitalk
+gitalk:
+  enable: true    #鏄惁寮€鍚疓italk璇勮��
+  clientID: d17939d5507da00944c3                            #生成的clientID
+  clientSecret: 8ebc886a73874995b96f107993666246bfcb6c0a    #生成的clientSecret
+  repo: DreamMemory001.github.io    #仓库名称
+  owner: DreamMemory001    #github用户名
+  admin: DreamMemory001
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
+
+# 统计
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: 29e6217c47874f37b3ee8cb1edc369ac
+
+  # Google Analytics
+ga_track_id: 'UA-133447079-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+
+
+
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# Friends
+#friends: [
+#    {
+#        title: "WY",
+#        href: "http://zhengwuyang.com"
+#    },{
+#        title: "简书·BY",
+#        href: "http://www.jianshu.com/u/e71990ada2fd"
+#    },{
+#        title: "Apple",
+#        href: "https://apple.com"
+#    },{
+#        title: "Apple Developer",
+#        href: "https://developer.apple.com/"
+#    }
+#]
