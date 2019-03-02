@@ -9,6 +9,7 @@ url: "https://dreammemory001.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/DreamMemory001/DreamMemory001.github.io" # you code repository
 
+
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
